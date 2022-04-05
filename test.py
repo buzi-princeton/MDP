@@ -1,6 +1,6 @@
-from mdp import MDP
-
 # TEST
+print("Test MDP class")
+from mdp import MDP
 a = [1, 2, 3, 4]
 b = [5, 6, 7, 8]
 c = [23, 24, 25]
@@ -16,4 +16,12 @@ for i in range(4*4*3):
   if i%10==0:
     print(i, state, real_state, index)
 
-print("Everything is correct!")
+print("\tEverything is correct!")
+
+print("Test Minicity visualizer")
+from visualizer.minicity import MinicityVisualizer
+visualizer = MinicityVisualizer()
+visualizer.reset(current_pos=0, goal=6)
+visualizer.plot()
+for i in range(1, 7):
+    visualizer.update_pos(i)
